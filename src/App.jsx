@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import InitiationPortal from './components/InitiationPortal';
 import LandingPage from './components/LandingPage';
+import Layout from './components/Layout';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <Layout>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/portal" element={<InitiationPortal />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
 }
