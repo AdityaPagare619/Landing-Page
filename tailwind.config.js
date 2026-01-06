@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#4F46E5", // Deep Indigo
-        secondary: "#818CF8",
-        accent: "#FCD34D", // Warm yellow for highlights
-        sage: "#84A98C", // Muted Sage
-        "sage-light": "#CAD2C5",
-        "background-light": "#FFFBF5", // Warm off-white
-        "background-dark": "#1F2937", // Dark gray/blue for dark mode
+        primary: "#5A4CFA", // Vibrant Purple/Blue from the screenshots
+        secondary: "#FFB020", // The warm yellow/orange used for highlights
+        "primary-dark": "#4335D6",
+        "accent-green": "#5BCB49", // Green for progress/success
+        "accent-cyan": "#36D9D8", // Cyan for specific globes
+        "background-light": "#FFFDF9", // Very light cream/white from screenshots
+        "background-dark": "#0B0A16", // Deep dark background for dark mode
         "card-light": "#FFFFFF",
-        "card-dark": "#374151",
-        "text-main-light": "#1F2937",
-        "text-main-dark": "#F3F4F6",
+        "card-dark": "#161525",
+        "text-light": "#1F1F35",
+        "text-dark": "#ECECFA",
         "text-muted-light": "#6B7280",
         "text-muted-dark": "#9CA3AF",
         "rankak-sage": "#8DA399",
@@ -30,10 +30,12 @@ export default {
         "rankak-parchment": "#FEFCF5",
         "rankak-text": "#2D334A",
         "rankak-input": "#F3F4F6",
+        "accent-yellow": "#fbbf24",
       },
       fontFamily: {
-        display: ["Nunito", "sans-serif"],
-        body: ["Quicksand", "sans-serif"],
+        display: ["'Plus Jakarta Sans'", "Nunito", "Space Grotesk", "sans-serif"],
+        body: ["Inter", "Quicksand", "sans-serif"],
+        sans: ["'Plus Jakarta Sans'", "sans-serif"],
       },
       borderRadius: {
         'xl': "1.5rem",
@@ -52,6 +54,9 @@ export default {
         'portal-depth': 'inset 0 0 60px rgba(67, 56, 202, 0.05)',
         'orb': 'inset 0 4px 10px rgba(255,255,255,0.3), 0 10px 20px rgba(67, 56, 202, 0.4)',
         'parchment': '0 10px 15px -3px rgba(168, 162, 158, 0.2), 0 4px 6px -2px rgba(168, 162, 158, 0.1)',
+        'soft-glow': '0 20px 40px -10px rgba(90, 76, 250, 0.15)',
+        'card-float': '0 10px 30px -5px rgba(0, 0, 0, 0.05)',
+        'inner-highlight': 'inset 0 2px 0 rgba(255, 255, 255, 0.2)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -59,6 +64,9 @@ export default {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shimmer': 'shimmer 2s linear infinite',
         'breathe': 'breathe 4s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 3s infinite',
+        'confetti': 'confetti 1s ease-out forwards',
+        'portal-enter': 'portal-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
       keyframes: {
         float: {
@@ -72,6 +80,14 @@ export default {
         breathe: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.02)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(91, 80, 229, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(91, 80, 229, 0.6)' },
+        },
+        'portal-enter': {
+          '0%': { opacity: '0', transform: 'scale(0.8) translateY(20px)' },
+          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
         }
       }
     },

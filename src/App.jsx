@@ -1,19 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import InitiationPortal from './components/InitiationPortal';
-import LandingPage from './components/LandingPage';
+import React, { Suspense } from 'react';
+import { useDevice } from './contexts/DeviceContext';
 import './App.css';
 
+const DesktopApp = React.lazy(() => import('./components/DesktopApp'));
+const MobileApp = React.lazy(() => import('./components/MobileApp'));
+
 function App() {
+  const { isMobile } = useDevice();
+  console.log('isMobile:', isMobile);
+
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/portal" element={<InitiationPortal />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Suspense fallback={<div>Loading...</div>}>
+        {isMobile ? <MobileApp /> : <DesktopApp />}
+      </Suspense>
+    </div>
   );
 }
 
