@@ -1,8 +1,9 @@
 import React from 'react';
-import MobileLandingPage from './mobile/MobileLandingPage';
+import LandingPage from './mobile/LandingPage';
 
 const MobileApp = () => {
-  return <MobileLandingPage />;
+  console.log("Rendering MobileApp");
+  return <LandingPage />;
 };
 
 export default MobileApp;

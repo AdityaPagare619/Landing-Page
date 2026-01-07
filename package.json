@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
+    "framer-motion": "^12.24.7",
+    "playwright": "^1.57.0",
     "react": "^19.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.0",
